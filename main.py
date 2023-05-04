@@ -31,5 +31,5 @@ if file:
     fig2 =px.histogram(x=probs*100, y=model.dls.vocab)
 
     left_column, right_column = st.columns(2)
-    left_column.plotly_chart(fig, use_container_width=True)
-    right_column.plotly_chart(fig, use_container_width=True)
+    left_column.plotly_chart(fig1, use_container_width=True)
+    right_column.plotly_chart(fig2, use_container_width=True)
