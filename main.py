@@ -1,7 +1,6 @@
 import streamlit as st
 from fastai.vision.all import *
 import plotly.express as px
-import wikipedia
 
 
 st.set_page_config(page_title="Jonivorlarni klassifikatsiya qiluvchi model",
@@ -27,9 +26,7 @@ if file:
     st.success(f"Bashorat: {pred}")
     st.info(f'Ehtimollik: {probs[pred_id]*100:.1f}%')
 
-    result = wikipedia.summary(pred)
 
     fig =px.histogram(x=model.dls.vocab, y=probs*100)
-    left_column, right_column = st.columns(2)
+    left_column= st.columns(1)
     left_column.plotly_chart(fig, use_container_width=True)
-    right_column.write(result)
