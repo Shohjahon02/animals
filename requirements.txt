@@ -1,4 +1,4 @@
 fastai==2.7.12
 plotly==5.14.1
-wikipedia==2.25.1
+wikipedia==0.9
 
