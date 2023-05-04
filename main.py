@@ -27,5 +27,9 @@ if file:
     st.info(f'Ehtimollik: {probs[pred_id]*100:.1f}%')
 
 
-    fig =px.histogram(x=model.dls.vocab, y=probs*100)
-    st.plotly_chart(fig)
+    fig1 =px.histogram(x=model.dls.vocab, y=probs*100)
+    fig2 =px.histogram(x=probs*100, y=model.dls.vocab)
+
+    left_column, right_column = st.columns(2)
+    left_column.plotly_chart(fig, use_container_width=True)
+    right_column.plotly_chart(fig, use_container_width=True)
