@@ -28,5 +28,4 @@ if file:
 
 
     fig =px.histogram(x=model.dls.vocab, y=probs*100)
-    left_column= st.columns(1)
-    left_column.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig)
